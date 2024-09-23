@@ -61,12 +61,12 @@ for minute in range(minutes):
 
 plt.figure(figsize=(14, 7))
 plt.plot(pollution_data, label='PM2.5 Levels', color='blue')
-plt.axhline(y=200, color='red', linestyle='--', label='200 µg/m³ Threshold')
+plt.axhline(y=200, color='red', linestyle='--', label='200 Threshold')
 
 for start, length in consecutive_minutes:
-    plt.axvspan(start, start + length, color='orange', alpha=0.5, label='Exceeding 200 µg/m³' if start == consecutive_minutes[0][0] else "")
+    plt.axvspan(start, start + length, color='orange', alpha=0.5, label='Exceeding 200' if start == consecutive_minutes[0][0] else "")
 
-plt.title('PM2.5 Levels with Peaks Above 200 µg/m³')
+plt.title('PM2.5 Levels with Peaks Above 200')
 plt.xlabel('Minutes')
 plt.ylabel('PM2.5 Level')
 plt.legend()
